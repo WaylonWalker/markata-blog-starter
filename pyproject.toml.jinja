@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "[( python_package_import_name )]"
+[% if description %]
+description = "[( description )]"
+[% else %]
+# description = "[( description )]"
+[% endif %]
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+
+[% if author_fullname and author_email %]
+authors = [
+  { name = "[( author_fullname )]", email = "[( author_email )]" },
+]
+[% else %]
+# authors = [
+#   { name = "[( author_fullname )]", email = "[( author_email )]" },
+# ]
+[% endif %]
+
+dependencies = ['markata~=0.5.0.dev0']
+dynamic = ["version"]
+
+[tool.hatch.version]
+path = "[( python_package_import_name )]/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pyinstrument",
+]
+
+[tool.hatch.envs.default.scripts]
+clean = "markata clean"
+build = "markata build"
+tui = "markata tui"
+serve = "python -m http.server 8000 --directory=markout"
+clean-build = ['clean', 'build',]
+clean-tui = ['clean', 'build', 'tui']

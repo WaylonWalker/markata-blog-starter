@@ -1,0 +1,48 @@
+_min_copier_version: v6.0.0b0
+_exclude:
+  - .git
+  - copier.yml
+
+# reverting to the old _endops allows to mix in jinja that will persist
+_envops:
+    autoescape: false
+    block_end_string: "%]"
+    block_start_string: "[%"
+    comment_end_string: "#]"
+    comment_start_string: "[#"
+    keep_trailing_newline: true
+    variable_end_string: ")]"
+    variable_start_string: "[("
+
+project_name:
+  type: str
+  help: Your project name
+
+url:
+  type: str
+  help: The url for your site
+  default: https://example.com
+
+author_fullname:
+  type: str
+  help: Your full name
+
+author_email:
+  type: str
+  help: Your email
+
+author_twitter:
+  type: str
+  help: Your Twitter @handle
+  default: '@'
+
+description:
+  type: str
+  help: Description of the site
+  default: A blog created from the markata blog-starter
+
+python_package_import_name:
+  type: str
+  help: Your Python package import name (for `import NAME` in Python code), this will be used to store plugins if you choose to make any.
+  default: "[( project_name|lower|replace('-', '_')|replace(' ', '_') )]"
+
