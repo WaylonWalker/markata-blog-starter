@@ -19,6 +19,6 @@ make this site your own.
 
 {% for post in markata.map('post', sort='date', filter='published==True and date<=today and "meta" in post.get("tags", [])', reverse=False) %}
 !!! note "[{{ post['title'] }}]({{ post['slug'] }})"
-    {{post['description']}}... _[read more]({{ post['slug'] }})_
+    {{post['description']}}...
 {% endfor %}
 
