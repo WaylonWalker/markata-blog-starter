@@ -36,7 +36,7 @@ jobs:
         run: copier -d project_name="Markata Blog Starter" -d url="https://blog-starter.marka.dev" -d author_fullname="Waylon Walker" -d author_email="waylon@waylonwalker.com" -d author_twitter="'@_waylonwalker'" -d description="The official markata starter for creating blogs" -d python_package_import_name="markata_blog_starter" copy . example
 
       - name: build with markata
-        working-directory: ./
+        working-directory: ./example
         run: markata build
 
       - name: GitHub Pages
