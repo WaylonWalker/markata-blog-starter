@@ -1,6 +1,6 @@
 ---
 date: 2022-09-01 1:00:00
-title: Home Page
+title: Markata Blog Starter
 # Don't put this page in a feed
 published: False
 tags:
