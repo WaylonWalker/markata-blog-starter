@@ -145,7 +145,7 @@ content = "article"
 
 [[markata.head.link]]
 # dynamically get the canonical url for each page
-href="{{ config.url }}/{{ slug + '/' if slug != 'index' else '' }}/"
+href="{{ config.url }}/{{ slug + '/' if slug != 'index' else '' }}"
 rel="canonical"
 
 [[markata.head.meta]]
