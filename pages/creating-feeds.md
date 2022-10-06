@@ -1,6 +1,6 @@
 ---
 date: 2022-09-05 1:00:00
-title: Your Own Style
+title: Creating Your Feeds
 published: True
 tags:
   - home
