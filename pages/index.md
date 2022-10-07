@@ -16,6 +16,8 @@ your own.  Edit this page in `pages/index.md`.
 Here are some pages to help get you started. Feel free to delete them and and
 make this site your own.
 
+> By default you can find these in the `pages` directory. The posts appear here using markata's `map` functionality to filter posts based on conditions -> Check it out in `pages/index.md`
+
 {% for post in markata.map('post', sort='date', filter='post.get("published", False)==True and date<=today and "meta" in post.get("tags", [])', reverse=False) %}
 !!! note "[{{ post['title'] }}]({{ post['slug'] }})"
     {{post['description']}}...
