@@ -58,6 +58,10 @@ value = """
 !!! danger
     You can end up with a blank page if you do not close any tags here.
 
+!!! success
+    To see a list of available fonts to choose from by including Google fonts
+    in your html go to https://fonts.google.com/
+
 ## Using your own template
 
 If you want complete customizability of both the style and structure of the
