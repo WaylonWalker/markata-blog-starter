@@ -26,7 +26,7 @@ Markata uses python's powerful jinja2 templating library for its templates as we
 
 ### `__version__`
 
-The veresion of markata used to build the site. ({{ __version__ }})
+The version of markata used to build the site. ({{ __version__ }})
 
 ### date
 
