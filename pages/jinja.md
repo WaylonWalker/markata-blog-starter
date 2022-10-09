@@ -63,10 +63,10 @@ You can also map over posts to get more.
 
 ## Last Three Posts
 
-{% for post in markata.map('post', sort='date', filter='published==True and date<=today')[:3] %}
+{% for post in markata.map('post', sort='date', filter='post.get("published", False)==True and date<=today')[:3] %}
 *  [{{ post['title'] }}]({{ post['slug'] }}){% endfor %}
 
 ## Last Three Python posts
 
-{% for post in markata.map('post', sort='date', filter='published==True and date<=today and "meta" in post.get("tags", [])')[:3] %}
+{% for post in markata.map('post', sort='date', filter='post.get("published", False)==True and date<=today and "meta" in post.get("tags", [])')[:3] %}
 *  [{{ post['title'] }}]({{ post['slug'] }}){% endfor %}
