@@ -1,4 +1,4 @@
-.markata.cache
+**/.markata.cache/
 markout/
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,node,data,emacs,python,pycharm,executable,sublimetext,visualstudio,visualstudiocode
@@ -960,3 +960,5 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,node,data,emacs,python,pycharm,executable,sublimetext,visualstudio,visualstudiocode
+.markata.cache
+.markata.cache

@@ -32,7 +32,7 @@ edit = false
 hooks = [
    "markata.plugins.publish_source",
    "markata.plugins.prevnext",
-   "markata.plugins.service_worker",
+   # "markata.plugins.service_worker", # enable the service_worker to deploy as a pwa with offline support, not reccommended for pages with frequent changes.
     "default"
 ]
 
@@ -78,6 +78,9 @@ icon = "icon.png"
 # color_accent_light = '#ffeb00'
 # overlay_brightness_light = '.95'
 
+# default lang
+lang = 'en'
+
 [markata.nav]
 'Home'='/'
 'All Posts'='/archive'
@@ -106,7 +109,7 @@ len=250
 len=500
 
 [markata.auto_publish.filters]
-til="templateKey=='til' and date<=today and status != 'draft'"
+til="templateKey=='til' and date<=today and post.get('published', False)== 'True'"
 
 ## SEO | <head>
 [[markata.head.text]]
@@ -145,7 +148,7 @@ content = "article"
 
 [[markata.head.link]]
 # dynamically get the canonical url for each page
-href="{{ config.url }}/{{ slug }}/"
+href="{{ config.url }}/{{ slug + '/' if slug != 'index' else '' }}"
 rel="canonical"
 
 [[markata.head.meta]]
@@ -223,19 +226,23 @@ content="#322D39"
 # creates a feed at /archive
 filter="date<=today and post.get('published', False)"
 sort="date"
+reverse="True"
 
 [markata.feeds.all]
 # creates a feed at /all
 filter="True"
 sort="date"
+reverse="True"
 
 [markata.feeds.published]
 # creates a feed at /published
 filter="date<=today and post.get('published', False)"
 sort="date"
+reverse="True"
 
 [markata.feeds.draft]
 # creates a feed at /draft
 filter="date>today or not post.get('published', False)"
 sort="date"
+reverse="True"
 
