@@ -76,3 +76,17 @@ post_template = "pages/templates/post_template.html"
 ```
 
 Now you can make structural changes to your template and see the results in your build.
+
+## Changing your favicon
+
+Your favicon should be kept in your `assets` directory, which is `./static` by
+default.  You can name the icon what you want, `icon.png` is the default, but
+you will have to change your icon config in your `markata.toml` to use a
+different value.
+
+``` toml
+[markata]
+assets_dir = "static"
+icon = "icon.png"
+```
+
