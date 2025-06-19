@@ -5,6 +5,7 @@ _exclude:
   - "!static/robots.txt"
   - ".github/workflows/build-sample-site.yml"
   - "copier.yml"
+_min_copier_version: "9.6.0"
 # reverting to the old _endops allows to mix in jinja that will persist
 _envops:
   autoescape: false
