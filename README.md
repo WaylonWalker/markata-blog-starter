@@ -1,4 +1,4 @@
-# markata-blog-starter
+# [% project_name %]
 
 This is a blog starter for the python static site generator `markata`.
 

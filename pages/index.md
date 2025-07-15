@@ -4,7 +4,6 @@ title: Markata Blog Starter
 published: True
 tags:
   - home
-  - meta
 
 ---
 
@@ -17,7 +16,7 @@ Here are some pages to help get you started. Feel free to delete them and and
 make this site your own.
 
 {% for post in markata.map('post', sort='date', filter='post.get("published", False)==True and date<=today and "meta" in post.get("tags", [])', reverse=False) %}
-!!! note "[{{ post['title'] }}]({{ post['slug'] }})"
+!!! note "[{{ post['title'] }}]({{ else post['slug'] }})"
     {{post['description']}}...
 {% endfor %}
 
