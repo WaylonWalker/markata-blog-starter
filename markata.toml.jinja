@@ -63,56 +63,56 @@ icon = "icon.png"
 # post_template = "pages/templates/post_template.html"
 
 ## Color Theme
-# color_bg = '#1f2022'
-# color_bg_code = '#1f2022'
-# color_text = '#eefbfe'
-# color_link = '#fb30c4'
-# color_accent = '#e1bd00c9'
-# overlay_brightness = '.85'
+# color_bg = "#1f2022"
+# color_bg_code = "#1f2022"
+# color_text = "#eefbfe"
+# color_link = "#fb30c4"
+# color_accent = "#e1bd00c9"
+# overlay_brightness = ".85"
 
-# color_bg_light = '#eefbfe'
-# color_bg_code_light = '#eefbfe'
-# color_text_light = '#1f2022'
-# color_link_light = '#47cbff'
-# color_accent_light = '#ffeb00'
-# overlay_brightness_light = '.95'
+# color_bg_light = "#eefbfe"
+# color_bg_code_light = "#eefbfe"
+# color_text_light = "#1f2022"
+# color_link_light = "#47cbff"
+# color_accent_light = "#ffeb00"
+# overlay_brightness_light = ".95"
 
 # default lang
-lang = 'en'
+lang = "en"
 
 # Patterns to look for content
 [markata.glob]
 glob_patterns = "pages/**/*.md"
 
 [markata.nav]
-'Home'='/'
-'All Posts'='/archive'
+"Home"="/"
+"All Posts"="/archive"
 
 [markata.prevnext]
-# strategy can be 'first' or 'all'
-# 'first' will cycle through the first map the post is found in.
-# 'all' will cycle through all of the maps
-strategy='first'
+# strategy can be "first" or "all"
+# "first" will cycle through the first map the post is found in.
+# "all" will cycle through all of the maps
+strategy = "first"
 
 # if you want different colors than your main color_text and color_accent, then
 # you can override it here
 # colors can be any valid css color format
 
-prevnext_color_text="white"
-prevnext_color_text_light="black"
-prevnext_color_angle="white"
-prevnext_color_angle_light="black"
+prevnext_color_text = "white"
+prevnext_color_text_light = "black"
+prevnext_color_angle = "white"
+prevnext_color_angle_light = "black"
 
 ## markata.plugins.auto_description configuration
 [markata.auto_description.description]
-len=160
+len = 160
 [markata.auto_description.long_description]
-len=250
+len = 250
 [markata.auto_description.super_description]
-len=500
+len = 500
 
 [markata.auto_publish.filters]
-til="templateKey=='til' and date<=today and post.get('published', False)== 'True'"
+til = "templateKey=='til' and date<=today and post.get('published', False)== 'True'"
 
 ## SEO | <head>
 [[markata.head.text]]
@@ -156,39 +156,39 @@ rel="canonical"
 
 [[markata.head.meta]]
 # dynamically get the canonical url for each page
-property="og:url"
-content="{{ config.url }}/{{ slug }}/"
+property = "og:url"
+content = "{{ config.url }}/{{ slug }}/"
 
 [[markata.head.meta]]
 # dynamically get the canonical url for each page
-property="og:image"
-content="{{ config.url }}/{{ slug }}.jpg"
+property = "og:image"
+content = "{{ config.url }}/{{ slug }}.jpg"
 
 [[markata.head.meta]]
-property="og:image:width"
-content='1200'
+property = "og:image:width"
+content = "1200"
 
 [[markata.head.meta]]
-property="og:image:height"
-content='600'
+property = "og:image:height"
+content = "600"
 
 [% if author_twitter %]
 [[markata.head.meta]]
-name="twitter:creator"
-content="[( author_twitter )]"
+name = "twitter:creator"
+content = "[( author_twitter )]"
 [% else %]
 # [[markata.head.meta]]
-# name="twitter:creator"
-# content="<your twitter username>"
+# name = "twitter:creator"
+# content = "<your twitter username>"
 [% endif %]
 
 [[markata.head.meta]]
-name="twitter:card"
-content="summary_large_image"
+name = "twitter:card"
+content = "summary_large_image"
 
 [% if author_fullname %]
 [[markata.head.meta]]
-property="og:author"
+property = "og:author"
 content = "[( author_fullname )]"
 [% else %]
 # [[markata.head.meta]]
@@ -221,38 +221,38 @@ content = "markata {{ __version__ }}"
 
 [[markata.head.meta]]
 name = "theme-color"
-content="#322D39"
+content = "#322D39"
 
 
 ## markata.plugins.feeds configuration
 [[markata.feeds]]
 # creates a feed at /archive
-name="archive"
-slug="archive"
-filter="date<=today and post.get('published', False)"
-sort="date"
-reverse="True"
+name = "archive"
+slug = "archive"
+filter = "date<=today and post.get('published', False)"
+sort = "date"
+reverse = "True"
 
 [[markata.feeds]]
 # creates a feed at /all
-name="all"
-slug="all"
-filter="True"
-sort="date"
-reverse="True"
+name = "all"
+slug = "all"
+filter = "True"
+sort = "date"
+reverse = "True"
 
 [[markata.feeds]]
 # creates a feed at /published
-name="published"
-slug="published"
-filter="date<=today and post.get('published', False)"
-sort="date"
-reverse="True"
+name = "published"
+slug = "published"
+filter = "date<=today and post.get('published', False)"
+sort = "date"
+reverse = "True"
 
 [[markata.feeds]]
 # creates a feed at /draft
-name="draft"
-slug="draft"
-filter="date>today or not post.get('published', False)"
-sort="date"
-reverse="True"
+name = "draft"
+slug = "draft"
+filter = "date>today or not post.get('published', False)"
+sort = "date"
+reverse = "True"
