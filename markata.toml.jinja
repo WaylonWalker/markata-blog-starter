@@ -151,18 +151,18 @@ content = "article"
 
 [[markata.head.link]]
 # dynamically get the canonical url for each page
-href="{{ config.url }}/{{ slug + '/' if slug != 'index' else '' }}"
+href="{{ config.url }}/{{ post.slug + '/' if post.slug != 'index' else '' }}"
 rel="canonical"
 
 [[markata.head.meta]]
 # dynamically get the canonical url for each page
 property = "og:url"
-content = "{{ config.url }}/{{ slug }}/"
+content = "{{ config.url }}/{{ post.slug }}/"
 
 [[markata.head.meta]]
 # dynamically get the canonical url for each page
 property = "og:image"
-content = "{{ config.url }}/{{ slug }}.jpg"
+content = "{{ config.url }}/{{ post.slug }}.jpg"
 
 [[markata.head.meta]]
 property = "og:image:width"
